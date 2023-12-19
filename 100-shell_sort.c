@@ -7,9 +7,9 @@
  */
 void swap_ints(int *a, int *b)
 {
-    int temp = *a;
-    *a = *b;
-    *b = temp;
+	int temp = *a;
+	*a = *b;
+	*b = temp;
 }
 
 /**
@@ -19,35 +19,35 @@ void swap_ints(int *a, int *b)
  */
 void shell_sort(int *array, size_t size)
 {
-    size_t gap = 1, i, j;
-    int temp;
+	size_t gap = 1, i, j;
+	int temp;
 
-    if (array == NULL || size < 2)
-        return;
+	if (array == NULL || size < 2)
+		return;
 
-    /* Calculate initial gap using Knuth sequence */
-    while (gap < size / 3)
-        gap = gap * 3 + 1;
+	/* Calculate initial gap using Knuth sequence */
+	while (gap < size / 3)
+		gap = gap * 3 + 1;
 
-    /* Iterate over gaps */
-    while (gap > 0)
-    {
-        /* Perform insertion sort for elements at each gap */
-        for (i = gap; i < size; i++)
-        {
-            temp = array[i];
-            j = i;
+	/* Iterate over gaps */
+	while (gap > 0)
+	{
+		/* Perform insertion sort for elements at each gap */
+		for (i = gap; i < size; i++)
+		{
+			temp = array[i];
+			j = i;
 
-            while (j >= gap && array[j - gap] > temp)
-            {
-                array[j] = array[j - gap];
-                j -= gap;
-            }
+			while (j >= gap && array[j - gap] > temp)
+			{
+				array[j] = array[j - gap];
+				j -= gap;
+			}
 
-            array[j] = temp;
-        }
+			array[j] = temp;
+		}
 
-        print_array(array, size);
-        gap /= 3; /* Update gap according to Knuth sequence */
-    }
+		print_array(array, size);
+		gap /= 3; /* Update gap according to Knuth sequence */
+	}
 }
