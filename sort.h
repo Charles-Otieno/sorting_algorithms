@@ -32,7 +32,7 @@ struct listint_s *next;
 } listint_t;
 
 void swap(int *a, int *b);
-void bubble_sort(int array[], int size);
+void bubble_sort(int *array, size_t size);
 void print_array(int array[], int size);
 void swap_nodes(listint_t **h, listint_t **n1, listint_t *n2);
 void insertion_sort_list(listint_t **list);
