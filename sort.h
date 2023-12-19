@@ -6,29 +6,17 @@
 #include <stddef.h>
 
 /**
-
-* struct listint_s - Doubly linked list node
-
-*
-
-* @n: Integer stored in the node
-
-* @prev: Pointer to the previous element of the list
-
-* @next: Pointer to the next element of the list
-
-*/
-
+ * struct listint_s - Doubly linked list node
+ *
+ * @n: Integer stored in the node
+ * @prev: Pointer to the previous element of the list
+ * @next: Pointer to the next element of the list
+ */
 typedef struct listint_s
-
 {
-
-const int n;
-
-struct listint_s *prev;
-
-struct listint_s *next;
-
+	const int n;
+	struct listint_s *prev;
+	struct listint_s *next;
 } listint_t;
 
 void swap(int *a, int *b);
@@ -48,4 +36,5 @@ void swap_node_behind(listint_t **list, listint_t **tail, listint_t **shaker);
 void cocktail_sort_list(listint_t **list);
 void counting_sort(int *array, size_t size);
 int get_max(int *array, int size);
+
 #endif /* SORT_H */
